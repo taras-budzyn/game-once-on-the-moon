@@ -118,53 +118,17 @@ export default class Level1 extends Phaser.Scene {
 		MON.Sfx.play('click');
 		MON.fadeOutScene('MainMenu', this);
   }
+
   createStones() {
     this.currentTimer = this.time.addEvent({
-        delay: 1500,
+        delay: 1000,
         callback: function(){
             const x = 320;
-            const y = 940;
+            const y = 840;
             this.stone = new Stone(this, x, y);
-                    
-            this.unsubscribeStoneCollide = this.matterCollision.addOnCollideStart({
-              objectA: this.stone.image,
-              callback: this.onRockCollide,
-              context: this
-            });
-            // this.time.addEvent({
-            //   delay: 1000,
-            //   callback: function(){
-            //     this.stone.destroy();
-            //   },
-            //   callbackScope: this
-            // });
         },
         callbackScope: this,
         loop: true
     });
-  }
-  
-  onRockCollide({ gameObjectB }) {
-    // Check if this is player object
-    if (gameObjectB && gameObjectB.type === "Sprite" && gameObjectB.texture.key === "player") {
-      console.log('PLAYER');
-      this.unsubscribeStoneCollide();
-      this.player.freeze();
-      const cam = this.cameras.main;
-      cam.fade(250, 0, 0, 0);
-      cam.once("camerafadeoutcomplete", () => this.scene.restart());
-    }
-    // console.log(gameObjectB);
-    if (!gameObjectB || !(gameObjectB instanceof Phaser.Tilemaps.Tile)) return;
-
-    const tile = gameObjectB;
-
-    // Check the tile property set in Tiled (you could also just check the index if you aren't using
-    // Tiled in your game)
-    if (tile.properties.isLethal) {
-      // Unsubscribe from collision events so that this logic is run only once
-      this.unsubscribeStoneCollide();
-      this.stone.destroy();
-    }
   }
 }
