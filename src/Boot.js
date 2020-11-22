@@ -14,7 +14,8 @@ class Boot extends Phaser.Scene {
         // );
 
         this.load.image("wooden-plank", "../../assets/images/wooden-plank.png");
-        this.load.image("block", "../../assets/images/block.png");
+        this.load.image("meteorite", "../../assets/images/meteorite.png");
+        this.load.image("oxygenBallon", "../../assets/images/oxygenBallon.png");
 
         // this.load.spritesheet(
         // "player",

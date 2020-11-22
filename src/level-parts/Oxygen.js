@@ -1,7 +1,7 @@
 export default class Oxygen {
     constructor(level, x, y) {
       this.level = level;
-      this.image = level.matter.add.image(x, y, "block").setScale(0.5);
+      this.image = level.matter.add.image(x, y, "oxygenBallon");
       this.unsubscribeOxygenCollide = this.level.matterCollision.addOnCollideStart({
         objectA: this.image,
         callback: this.onOxygenCollide,
