@@ -1,4 +1,4 @@
-import Player from "../player.js";
+import Player from "../level-parts/player.js";
 import createRotatingPlatform from "../vendor/create-rotating-platform.js";
 
 export default class Level2 extends Phaser.Scene {

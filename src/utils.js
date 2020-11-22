@@ -274,7 +274,9 @@ MON.Lang = {
       'game-name': 'Once on the MOON',
       'complete-level': 'Level is completed!',
       'level-1-name': 'Level 1',
-      'level-2-name': 'Level 2'
+      'level-2-name': 'Level 2',
+      'oxygen': 'Oxygen: ',
+      'percentage': '%'
     }
   }
 };

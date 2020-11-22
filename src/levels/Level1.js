@@ -1,6 +1,7 @@
-import Player from "../Player.js";
-import Stone from "../Stone.js"
-import createRotatingPlatform from "../vendor/create-rotating-platform.js";
+import Player from "../level-parts/Player.js";
+import Stone from "../level-parts/Stone.js";
+import Oxygen from "../level-parts/Oxygen.js";
+import LevelMain from "../level-parts/LevelMain.js";
 
 export default class Level1 extends Phaser.Scene {
   constructor() {
@@ -20,6 +21,7 @@ export default class Level1 extends Phaser.Scene {
     const tileset = map.addTilesetImage("terrain");
     const groundLayer2 = map.createDynamicLayer("Tile Layer 2", tileset, 0, 0);
     const groundLayer = map.createDynamicLayer("Ground", tileset, 0, 0);
+    this.levelMain = new LevelMain(this);
     
     // Set colliding tiles before converting the layer to Matter bodies
     groundLayer.setCollisionByProperty({ collides: true });
@@ -65,14 +67,8 @@ export default class Level1 extends Phaser.Scene {
       callback: this.onPlayerWin,
       context: this
     });
-    this.matter.world.createDebugGraphic();
-    this.matter.world.drawDebug = false;
-    this.input.keyboard.on("keydown_Q", event => {
-      this.matter.world.drawDebug = !this.matter.world.drawDebug;
-      this.matter.world.debugGraphic.clear();
-    });
     this.createStones();
-    this.initUI();
+    this.createOxygen();
   }
 
   onPlayerCollide({ gameObjectB }) {
@@ -96,22 +92,9 @@ export default class Level1 extends Phaser.Scene {
   onPlayerWin() {
     // Celebrate only once
     this.unsubscribeCelebrate();
+    this.ogyxenTimer.paused =! this.ogyxenTimer.paused;
 		MON.Storage.set('MON-level','Level2');
     MON.fadeOutLevel('AfterLevel', this);
-  }
-
-  initUI() {
-		this.buttonPause = new Button(10, 10, 'button-home', this.stateMainMenu, this);
-		this.buttonPause.setOrigin(0,0);
-    this.buttonPause.setScrollFactor(0).setDepth(1000);
-
-    const help = this.add.text(90, 35, MON.text['level-1-name'], {
-      fontSize: "18px",
-      padding: { x: 10, y: 5 },
-      backgroundColor: "#ffffff",
-      fill: "#000000"
-    });
-    help.setScrollFactor(0).setDepth(1000);
   }
 
 	stateMainMenu() {
@@ -130,5 +113,10 @@ export default class Level1 extends Phaser.Scene {
         callbackScope: this,
         loop: true
     });
+  }
+  createOxygen() {
+    const x = 600;
+    const y = 840;
+    this.stone = new Oxygen(this, x, y);
   }
 }
