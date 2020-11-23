@@ -4,7 +4,26 @@
 	<meta charset="utf-8" />
 	<title>Game</title>
 	<meta name="description" content="Unreal game" />
-	<style>*{margin:0;padding:0;}body{background: #ccc url(assets/images/pattern.png) repeat; overflow:hidden;}#banner{display:none;}</style>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body {
+			background: #0b1320;
+			overflow:hidden;
+		}
+		#game-container {
+			min-width: 100vw;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#game-container > canvas {
+			border-radius: 5px;
+		}
+	</style>
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="manifest" href="mon.webmanifest" />
 	<script src="src/plugins/webfont.js"></script>
@@ -18,6 +37,7 @@
 	<script src="src/Story.js"></script>
 </head>
 <body>
+<div id="game-container"></div>
 <script src="src/start.js" type="module"></script>
 </body>
 </html>

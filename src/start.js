@@ -29,13 +29,14 @@ import Level2 from "./levels/Level2.js";
 
 const gameConfig = {
 	type: Phaser.AUTO,
+	parent: "game-container",
 	scale: {
 		//mode: Phaser.Scale.FIT,
-		autoCenter: Phaser.Scale.CENTER_BOTH,
+		//autoCenter: Phaser.Scale.CENTER_BOTH,
 		width: 800,
 		height: 600
 	},
-	//backgroundColor: '#ccc',
+	backgroundColor: '#fef9e6',
 	scene: [Boot, Preloader, MainMenu, Settings, Story, Level1, Level2, AfterLevel],
 	pixelArt: true,
 	physics: { default: "matter" },
