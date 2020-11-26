@@ -64,7 +64,7 @@ export default class Player {
       .setExistingBody(compoundBody)
       .setScale(2)
       .setFixedRotation() // Sets inertia to infinity so the player can't rotate
-      .setPosition(x, y);
+      .setPosition(x, y).setDepth(10);
 
     // Track which sensors are touching something
     this.isTouching = { left: false, right: false, ground: false };
