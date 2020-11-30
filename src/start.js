@@ -26,6 +26,8 @@ if(enablePWA) {
 import AfterLevel from "./levels/AfterLevel.js";
 import Level1 from "./levels/Level1.js";
 import Level2 from "./levels/Level2.js";
+import Level3 from "./levels/Level3.js";
+import Level4 from "./levels/Level4.js";
 
 const gameConfig = {
 	type: Phaser.AUTO,
@@ -36,8 +38,8 @@ const gameConfig = {
 		width: 800,
 		height: 600
 	},
-	backgroundColor: '#fef9e6',
-	scene: [Boot, Preloader, MainMenu, Settings, Story, Level1, Level2, AfterLevel],
+	backgroundColor: '#0f070d',
+	scene: [Boot, Preloader, MainMenu, Settings, Story, Level1, Level2, Level3, Level4, AfterLevel],
 	pixelArt: true,
 	physics: { default: "matter" },
 	plugins: {

@@ -1,11 +1,11 @@
 import LevelMain from "../level-parts/LevelMain.js";
 
-export default class Level2 extends Phaser.Scene {
+export default class Level4 extends Phaser.Scene {
   constructor() {
-      super('Level2');
+      super('Level4');
   }
   preload() {
-    this.load.tilemapTiledJSON("map-level2", "../../assets/tilemaps/level1.json");
+    this.load.tilemapTiledJSON("map-level4", "../../assets/tilemaps/level1.json");
     this.load.image(
     "terrain",
     "../../assets/tilesets/terrain.png"
@@ -13,10 +13,10 @@ export default class Level2 extends Phaser.Scene {
   }
 
   create() {
-    this.map = this.make.tilemap({ key: "map-level2" });
+    this.map = this.make.tilemap({ key: "map-level4" });
     this.tileset = this.map.addTilesetImage("terrain");
     this.groundLayer = this.map.createDynamicLayer("Ground", this.tileset, 0, 0);
 
-    this.levelMain = new LevelMain(this, 'Level3');
+    this.levelMain = new LevelMain(this, 'Level1');
   }
 }

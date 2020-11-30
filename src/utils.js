@@ -272,9 +272,12 @@ MON.Lang = {
       'gameplay-gameover': 'GAME OVER',
       'screen-story-howto': 'Arrows/WASD \nto move the player.',
       'game-name': 'Once on the MOON',
-      'complete-level': 'Level is completed!',
+      'finish-complete-level': 'Level is completed. \nYou found all parts of the spaceship \nand now you can fly to home. \nThe end.',
+      'complete-level': 'Level is completed. \nYou found part of the spaceship.',
       'level-1-name': 'Level 1',
       'level-2-name': 'Level 2',
+      'level-3-name': 'Level 3',
+      'level-4-name': 'Level 4',
       'oxygen': 'Oxygen: ',
       'percentage': '%'
     }

@@ -26,9 +26,21 @@ export default class AfterLevel extends Phaser.Scene{
     }
     initUI() {
         const level = MON.Storage.get('MON-level');
-		var fontTitle = { font: '38px '+MON.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
-		var textTitle = this.add.text(MON.world.centerX, MON.world.centerY, MON.text['complete-level'], fontTitle);
-        textTitle.setOrigin(0.5);
+        if (level !== 'Level1') {
+            var fontTitle = { font: '38px '+MON.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
+            var textTitle = this.add.text(MON.world.centerX, MON.world.centerY, MON.text['complete-level'], fontTitle);
+            textTitle.setOrigin(0.5);
+            this.buttonStart = new Button(MON.world.width-20, MON.world.height-20, 'button-start', this.clickStart, this);
+            this.buttonStart.setOrigin(1, 1);
+    
+            this.buttonStart.x = MON.world.width+this.buttonStart.width+20;
+            this.tweens.add({targets: this.buttonStart, x: MON.world.width-20, duration: 500, ease: 'Back'});
+        } else {
+            const level = MON.Storage.get('MON-level');
+            var fontTitle = { font: '38px '+MON.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
+            var textTitle = this.add.text(MON.world.centerX, MON.world.centerY, MON.text['finish-complete-level'], fontTitle);
+            textTitle.setOrigin(0.5);
+        }
 
         // var buttonMenu = new Button(20, MON.world.height-40, 'button-home', this.clickMenu, this, 'static');
         // buttonMenu.setOrigin(0, 1);
@@ -40,13 +52,6 @@ export default class AfterLevel extends Phaser.Scene{
         this.buttonMenu.y = -this.buttonMenu.height-20;
         this.tweens.add({targets: this.buttonMenu, y: 20, duration: 500, ease: 'Back'});
 
-        if (level !== 'Level1') {
-            this.buttonStart = new Button(MON.world.width-20, MON.world.height-20, 'button-start', this.clickStart, this);
-            this.buttonStart.setOrigin(1, 1);
-    
-            this.buttonStart.x = MON.world.width+this.buttonStart.width+20;
-            this.tweens.add({targets: this.buttonStart, x: MON.world.width-20, duration: 500, ease: 'Back'});
-        }
     }
     clickMenu() {
         MON.fadeOutScene('MainMenu', this);
