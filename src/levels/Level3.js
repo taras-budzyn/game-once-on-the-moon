@@ -5,7 +5,7 @@ export default class Level3 extends Phaser.Scene {
       super('Level3');
   }
   preload() {
-    this.load.tilemapTiledJSON("map-level3", "../../assets/tilemaps/level1.json");
+    this.load.tilemapTiledJSON("map-level3", "../../assets/tilemaps/level3.json");
     this.load.image(
     "terrain",
     "../../assets/tilesets/terrain.png"

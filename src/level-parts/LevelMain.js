@@ -148,9 +148,9 @@ export default class LevelMain {
     }
   
     createStones(map) {
-      map.getObjectLayer("MeteoriteSpawns").objects.forEach(point => {
+      map.getObjectLayer("MeteoriteSpawns").objects.forEach((point, index) => {
         this.currentTimer = this.level.time.addEvent({
-            delay: 1000,
+            delay: 700 + 200*index,
             callback: function(){
                 this.stone = new Stone(this.level, point.x, point.y);
             },
