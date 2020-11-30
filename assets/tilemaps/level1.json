@@ -70,8 +70,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1901,
-                 "y":551
+                 "x":44,
+                 "y":1284
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -155,7 +155,7 @@
         {
          "columns":7,
          "firstgid":1,
-         "image":"..\/..\/..\/art\/levels\/terrain.png",
+         "image":"..\/tilesets\/terrain.png",
          "imageheight":210,
          "imagewidth":210,
          "margin":0,
