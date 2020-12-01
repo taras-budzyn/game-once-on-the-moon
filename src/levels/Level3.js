@@ -17,6 +17,6 @@ export default class Level3 extends Phaser.Scene {
     this.tileset = this.map.addTilesetImage("terrain");
     this.groundLayer = this.map.createDynamicLayer("Ground", this.tileset, 0, 0);
 
-    this.levelMain = new LevelMain(this, 'Level3');
+    this.levelMain = new LevelMain(this, 'Level4');
   }
 }
