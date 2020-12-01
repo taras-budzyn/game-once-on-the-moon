@@ -40,6 +40,9 @@ export default class AfterLevel extends Phaser.Scene{
             var fontTitle = { font: '38px '+MON.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 5 };
             var textTitle = this.add.text(MON.world.centerX, MON.world.centerY, MON.text['finish-complete-level'], fontTitle);
             textTitle.setOrigin(0.5);
+            
+            var buttonEnclave = new Button(MON.world.width-375, MON.world.height-40, 'spaceshipReady', this.clickEnclave, this, 'static');
+            buttonEnclave.setOrigin(0, 1);
         }
 
         // var buttonMenu = new Button(20, MON.world.height-40, 'button-home', this.clickMenu, this, 'static');
