@@ -119,8 +119,7 @@ class MainMenu extends Phaser.Scene {
         var resources = {
             'image': [
                 ['need-this', 'assets/images/need-this.png'],
-                ['overlay', 'assets/images/overlay.png'],
-                ['particle', 'assets/images/particle.png']
+                ['overlay', 'assets/images/overlay.png']
             ],
             'spritesheet': [
                 ['button-continue', 'assets/images/button-continue.png', {frameWidth:180,frameHeight:180}],

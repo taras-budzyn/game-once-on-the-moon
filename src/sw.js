@@ -49,7 +49,6 @@ var appShellFiles = [
   './assets/images/button-tryagain.png',
   './assets/images/loading-background.png',
   './assets/images/overlay.png',
-  './assets/images/particle.png',
   './assets/images/pattern.png',
 ];
 
