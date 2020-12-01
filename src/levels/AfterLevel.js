@@ -63,4 +63,7 @@ export default class AfterLevel extends Phaser.Scene{
         const level = MON.Storage.get('MON-level');
         MON.fadeOutScene(level, this);
     }
+    clickEnclave() {
+        MON.Sfx.play('click');
+    }
 }
