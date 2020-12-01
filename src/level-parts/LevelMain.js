@@ -17,7 +17,7 @@ export default class LevelMain {
         this.createLevel();
         this.initUI();
         this.initOxygenTimer();
-        this.initDebug();
+        // this.initDebug();
     }
 
     createLevel() {
