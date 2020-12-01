@@ -8,7 +8,6 @@ class Boot extends Phaser.Scene {
         this.load.image('men-shot', 'assets/images/men-shot.png');
         WebFont.load({ custom: { families: ['Berlin'], urls: ['fonts/BRLNSDB.css'] } });
 
-        this.load.image("wooden-plank", "../../assets/images/wooden-plank.png");
         this.load.image("meteorite", "../../assets/images/meteorite.png");
         this.load.image("oxygenBallon", "../../assets/images/oxygenBallon.png");
         this.load.image("spaceshipDetail1", "../../assets/images/spaceship-detail-1.png");
