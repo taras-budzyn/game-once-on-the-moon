@@ -6,7 +6,7 @@ class Story extends Phaser.Scene {
 		this.add.sprite(0, 0, 'background').setOrigin(0,0);
 
 		var fontStory = { font: '38px '+MON.text['FONT'], fill: '#ffde00', stroke: '#000', strokeThickness: 7, align: 'center' };
-		var textStory = this.add.text(MON.world.centerX, 200, MON.text['screen-story-howto'], fontStory);
+		var textStory = this.add.text(MON.world.centerX, 100, MON.text['screen-story-howto'], fontStory);
 		textStory.setOrigin(0.5,0);
 
 		var buttonContinue = new Button(MON.world.width-20, MON.world.height-20, 'button-continue', this.clickContinue, this);

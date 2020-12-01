@@ -270,7 +270,7 @@ MON.Lang = {
       'key-try': 'T - try again',
       'gameplay-paused': 'PAUSED',
       'gameplay-gameover': 'GAME OVER',
-      'screen-story-howto': 'Arrows/WASD \nto move the player.',
+      'screen-story-howto': 'You have been crashed on the Moon.\nWhat can you do?:)\nFind all ship details and return home.\n\n\n Arrows/WASD \nto move the player.',
       'game-name': 'Once on the MOON',
       'finish-complete-level': 'Level is completed. \nYou found all parts of the spaceship \nand now you can fly to home. \nThe end.',
       'complete-level': 'Level is completed. \nYou found part of the spaceship.',
