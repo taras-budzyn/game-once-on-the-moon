@@ -1,7 +1,7 @@
 {
-    "name": "Enclave Phaser Template",
-    "short_name": "MON",
-    "description": "Mobile template for HTML5 games created using the Phaser game engine.",
+    "name": "Once on the Moon",
+    "short_name": "OOM",
+    "description": "First game",
     "icons": [
         {
             "src": "assets/images/icons/icon-32.png",
