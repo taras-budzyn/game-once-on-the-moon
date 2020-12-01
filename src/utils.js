@@ -240,7 +240,7 @@ MON.Lang = {
       'sound-off': 'Sound: OFF',
       'music-on': 'Music: ON',
       'music-off': 'Music: OFF',
-      'keyboard-info': 'Press K for keyboard shortcuts',
+      'keyboard-info': '',//'Press K for keyboard shortcuts',
       'credits': 'CREDITS',
       'madeby': 'MON made by',
       'usedEPT': 'Used EPT',
