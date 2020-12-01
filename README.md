@@ -2,6 +2,10 @@
 Taking part of https://itch.io/jam/game-off-2020 game-jam
 
 
+Inspiration and instruction for creation have been the next tutorial​:
+https://itnext.io/modular-game-worlds-in-phaser-3-tilemaps-5-matter-physics-platformer-d14d1f614557
+
+
 ## Content used
 
 * Code
