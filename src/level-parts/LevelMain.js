@@ -1,10 +1,13 @@
 import Player from "../level-parts/Player.js";
 import Stone from "../level-parts/Stone.js";
 import Oxygen from "../level-parts/Oxygen.js";
+import SpaceshipDetail from "../level-parts/SpaceshipDetail.js"
 
 export default class LevelMain {
     constructor(level, nextLevelName) {
       this.level = level;
+      this.currentLevelName = MON.Storage.get('MON-level');
+      this.levelIndex = this.currentLevelName.substr(this.currentLevelName.length - 1);
       this.nextLevelName = nextLevelName;
       this.level.ogyxenPercentage = 99;
       this.initLevel();
@@ -64,6 +67,10 @@ export default class LevelMain {
         });
         this.createStones(this.level.map);
         this.createOxygen(this.level.map);
+        this.createSpaceshipDetail(this.level.map);
+        if ( this.currentLevelName === 'Level1') {
+          this.image = this.level.add.image(x + 125, y - 89, "spaceshipGrey").setDepth(-10);
+        }
     }
         
     initUI() {
@@ -72,13 +79,13 @@ export default class LevelMain {
         this.level.buttonPause.setOrigin(0,0);
         this.level.buttonPause.setScrollFactor(0).setDepth(1000);
 
-        // const help = this.level.add.text(90, 35, MON.text['level-1-name'], {
-        // fontSize: "18px",
-        // padding: { x: 10, y: 5 },
-        // backgroundColor: "#ffffff",
-        // fill: "#000000"
-        // });
-        // help.setScrollFactor(0).setDepth(1000);
+        const help = this.level.add.text(90, 35, MON.text['level-' + this.levelIndex + '-name'], {
+        fontSize: "18px",
+        padding: { x: 10, y: 5 },
+        backgroundColor: "#ffffff",
+        fill: "#000000"
+        });
+        help.setScrollFactor(0).setDepth(1000);
         this.level.textOxygen = this.level.add.text(MON.world.width-160, 10, MON.text['oxygen']+this.level.ogyxenPercentage+MON.text['percentage'], fontText);
         this.level.textOxygen.setOrigin(0,1);
         this.level.tweens.add({targets: this.level.textOxygen, y: this.level.textOxygen.height+30, duration: 500, ease: 'Back'});	
@@ -150,7 +157,7 @@ export default class LevelMain {
     createStones(map) {
       map.getObjectLayer("MeteoriteSpawns").objects.forEach((point, index) => {
         this.currentTimer = this.level.time.addEvent({
-            delay: 700 + 200*index,
+            delay: 1200 + 200*index,
             callback: function(){
                 this.stone = new Stone(this.level, point.x, point.y);
             },
@@ -163,6 +170,12 @@ export default class LevelMain {
     createOxygen(map) {
       map.getObjectLayer("OxygenSpawns").objects.forEach(point => {
         this.oxygen = new Oxygen(this.level, point.x, point.y);
+      });
+    }
+
+    createSpaceshipDetail(map) {
+      map.getObjectLayer("Sensors").objects.forEach(point => {
+        this.oxygen = new SpaceshipDetail(this.level, point.x, point.y, this.levelIndex);
       });
     }
   }

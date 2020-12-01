@@ -138,7 +138,7 @@ class MainMenu extends Phaser.Scene {
             ],
             'audio': [
                 ['sound-click', ['sfx/audio-button.m4a','sfx/audio-button.mp3','sfx/audio-button.ogg']],
-                ['music-theme', ['sfx/music-bitsnbites-liver.m4a','sfx/music-bitsnbites-liver.mp3','sfx/music-bitsnbites-liver.ogg']]
+                ['music-theme', ['sfx/music-in-the-wreckage.m4a','sfx/music-in-the-wreckage.mp3','sfx/music-in-the-wreckage.ogg']]
             ]
         };            
         for(var method in resources) {
